@@ -1,6 +1,8 @@
 <Solution>
   <Folder Name="/ApplicationLayer/" />
-  <Folder Name="/DomainLayer/" />
+  <Folder Name="/DomainLayer/">
+    <Project Path="Domain/Domian.ValueObjects/Domain.ValueObjects.csproj" Id="afdbf8e5-aa61-4286-a0d4-18407a56cc15" />
+  </Folder>
   <Folder Name="/InfrastructureLayer/" />
   <Folder Name="/PresentationLayer/" />
 </Solution>
