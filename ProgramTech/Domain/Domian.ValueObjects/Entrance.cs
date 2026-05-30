@@ -4,7 +4,7 @@ using Domain.ValueObjects.Validators;
 namespace Domain.ValueObjects;
 
 /// <summary>
-/// Represents type of the entity's username.
+/// Represents type of the entity's entrance.
 /// </summary>
-/// <param name="name">The username of the entity.</param>
+/// <param name="entrance">The entrance of the entity.</param>
 public class Entrance(int entrance) : ValueObject<int>(new EntranceValidator(), entrance);

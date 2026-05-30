@@ -4,7 +4,7 @@ using Domain.ValueObjects.Validators;
 namespace Domain.ValueObjects;
 
 /// <summary>
-/// Represents type of the entity's username.
+/// Represents type of the entity's street.
 /// </summary>
-/// <param name="name">The username of the entity.</param>
+/// <param name="street">The street of the entity.</param>
 public class Street(string street) : ValueObject<string>(new StreetValidator(), street);

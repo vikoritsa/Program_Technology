@@ -4,7 +4,7 @@ using Domain.ValueObjects.Validators;
 namespace Domain.ValueObjects;
 
 /// <summary>
-/// Represents type of the entity's username.
+/// Represents type of the entity's quantity.
 /// </summary>
-/// <param name="name">The username of the entity.</param>
+/// <param name="quantity">The quantity of the entity.</param>
 public class Quantity(int quantity) : ValueObject<int>(new QuantityValidator(), quantity);

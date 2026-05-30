@@ -4,7 +4,7 @@ using Domain.ValueObjects.Validators;
 namespace Domain.ValueObjects;
 
 /// <summary>
-/// Represents type of the entity's username.
+/// Represents type of the entity's town.
 /// </summary>
-/// <param name="name">The username of the entity.</param>
+/// <param name="town">The town of the entity.</param>
 public class Town(string town) : ValueObject<string>(new TownValidator(), town);

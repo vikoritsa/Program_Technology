@@ -4,7 +4,7 @@ using Domain.ValueObjects.Validators;
 namespace Domain.ValueObjects;
 
 /// <summary>
-/// Represents type of the entity's username.
+/// Represents type of the entity's wishes.
 /// </summary>
-/// <param name="name">The username of the entity.</param>
+/// <param name="wishes">The wishes of the entity.</param>
 public class Wishes(string wishes) : ValueObject<string>(new WishesValidator(), wishes);
