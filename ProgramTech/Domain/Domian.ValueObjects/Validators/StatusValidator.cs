@@ -7,7 +7,7 @@ namespace Domain.ValueObjects.Validators;
 /// Validates that an enum value is defined in the enum type.
 /// </summary>
 /// <typeparam name="TEnum">The enum type to validate.</typeparam>
-public class EnumValidator<TEnum> : IValidator<TEnum> where TEnum : Enum
+public class StatusValidator<TEnum> : IValidator<TEnum> where TEnum : Enum
 {
     public void Validate(TEnum value)
     {
