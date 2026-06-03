@@ -55,8 +55,30 @@ namespace Domain.Entities
 
         public void SetStatus(Status newStatus)
         {
+            if (!IsValidTransition(Status, newStatus))
+                throw new InvalidOrderStatusTransitionException(this, Status, newStatus);
             Status = newStatus;
         }
-        public void AddItem(OrderItem item) { _items.Add(item); }
+        private bool IsValidTransition(Status from, Status to)
+        {
+            
+            return (from, to) switch
+            {
+                (Status.New, Status.Assembling) => true,
+                (Status.New, Status.Cancelled) => true,
+                (Status.Assembling, Status.Ready) => true,
+                (Status.Ready, Status.Delivering) => true,
+                (Status.Delivering, Status.Completed) => true,
+                (Status.Delivering, Status.Cancelled) => true,
+                _ => false
+            };
+        }
+        public void ChangeDeliveryDate(DateTime newDate)
+        {
+            if (newDate.Date < DateTime.UtcNow.Date)
+                throw new InvalidDeliveryDateException(newDate);
+            DeliveryDate = newDate;
+        }
+        public void AddItem(OrderItem item) { _items.Add(item); }   
     }
-    }
+}
